@@ -1,7 +1,10 @@
-﻿using Domain.Results;
+﻿namespace Domain.Models; 
 
-namespace Domain.Models;
+using Domain.Results;
 
+/// <summary>
+/// This class represents a category.
+/// </summary>
 public class Category
 {
     /// <summary>

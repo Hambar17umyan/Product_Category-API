@@ -5,6 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data.Repositories.Abstract;
 
+/// <summary>
+/// This class is used to implement the repository pattern.
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public abstract class Repository<T> : IRepository<T> where T : class, IEntity
 {
     public virtual async Task<Result<T>> DeleteAsync(int id)

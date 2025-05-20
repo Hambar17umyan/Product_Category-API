@@ -1,8 +1,11 @@
-﻿using Application.Models.Requests.Commands.Products;
+﻿namespace Application.Models.Response.Commands.Products; 
+
+using Application.Models.Requests.Commands.Products;
 using Application.Models.Response.Abstract;
 
-namespace Application.Models.Response.Commands.Products;
-
+/// <summary>
+/// This class represents the response for the update product command.
+/// </summary>
 public class UpdateProductResponse : IResponse<UpdateProductCommand>
 {
     /// <summary>

@@ -3,6 +3,8 @@
 using Application.Common.AppMediator;
 using Application.Common.AppRequestHandlerResult;
 using Application.Common.Constants;
+using Application.Common.Validators.Categories;
+using Application.Common.Validators.Products;
 using Application.Models.Requests.Commands.Categories;
 using Application.Models.Requests.Commands.Products;
 using Application.Models.Requests.Queries.Categories;
@@ -16,6 +18,7 @@ using Application.RequestHandlers.CommandHandlers.Products;
 using Application.RequestHandlers.QueryHandlers.Categories;
 using Application.RequestHandlers.QueryHandlers.Products;
 using Application.Services.ModelServices;
+using FluentValidation;
 using Infrastructure.Data.DB;
 using Infrastructure.Data.Repositories.Abstract;
 using Infrastructure.Data.Repositories.Concrete;
@@ -41,6 +44,7 @@ public static class DependancyInjection
         builder.InjectDbContext();
         builder.InjectMedaitor();
         builder.InjectRequestHandlers();
+        builder.InjectFluentValidation();
         return builder;
     }
 
@@ -94,6 +98,16 @@ public static class DependancyInjection
     private static void InjectMedaitor(this WebApplicationBuilder builder)
     {
         builder.Services.AddSingleton<IMediator, Mediator>();
+    }
+
+    /// <summary>
+    /// This method is used to configure the dependancy injection for the fluent validation.
+    /// </summary>
+    /// <param name="builder">The builder.</param>
+    private static void InjectFluentValidation(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddValidatorsFromAssemblyContaining<CreateCategoryCommandValidator>();
+        builder.Services.AddValidatorsFromAssemblyContaining<CreateProductCommandValidator>();
     }
 
     /// <summary>

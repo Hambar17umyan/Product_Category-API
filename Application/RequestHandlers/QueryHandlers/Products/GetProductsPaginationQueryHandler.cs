@@ -1,13 +1,12 @@
-﻿using Application.Models.Requests.Queries.Products;
+﻿namespace Application.RequestHandlers.QueryHandlers.Products; 
+
+using Application.Models.Requests.Queries.Products;
 using Application.Common.AppMediator;
 using Application.Common.AppRequestHandlerResult;
 using Application.Models.Response.Queries.Products;
 using Application.Common.DTOs;
-using Application.Models.Response.Queries.Categories;
 using Domain.Results;
 using Application.Services.ModelServices;
-
-namespace Application.RequestHandlers.QueryHandlers.Products;
 
 /// <summary>
 /// This class handles the request to get products with pagination.
@@ -49,7 +48,7 @@ public class GetProductsPaginationQueryHandler : IRequestHandler<GetProductsPagi
                     ProductName = c.Name,
                     ProductCategory1Id = c.Category1.Id,
                     ProductCategory2Id = c.Category2.Id,
-                    Category3Id = c.Category3?.Id,
+                    ProductCategory3Id = c.Category3?.Id,
                 }).ToList(),
             };
             return RequestHandlerResult<GetProductsPaginationResponse>.Ok(response);

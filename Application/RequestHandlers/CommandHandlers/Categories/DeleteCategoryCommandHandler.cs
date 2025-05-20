@@ -1,12 +1,15 @@
-﻿using Application.Common.AppMediator;
+﻿namespace Application.RequestHandlers.CommandHandlers.Categories; 
+
+using Application.Common.AppMediator;
 using Application.Common.AppRequestHandlerResult;
 using Application.Models.Requests.Commands.Categories;
 using Application.Models.Response.Commands.Categories;
 using Application.Services.ModelServices;
 using Domain.Results;
 
-namespace Application.RequestHandlers.CommandHandlers.Categories;
-
+/// <summary>
+/// This class handles the deletion of a category.
+/// </summary>
 public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommand, RequestHandlerResult<DeleteCategoryResponse>>
 {
     /// <summary>

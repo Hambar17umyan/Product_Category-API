@@ -1,15 +1,16 @@
-﻿using Application.Models.Requests.Commands.Products;
+﻿namespace Application.RequestHandlers.CommandHandlers.Products; 
+
+using Application.Models.Requests.Commands.Products;
 using Application.Common.AppMediator;
 using Application.Common.AppRequestHandlerResult;
 using Application.Models.Response.Commands.Products;
-using Application.Models.Requests.Commands.Categories;
-using Application.Models.Response.Commands.Categories;
 using Domain.Results;
 using Application.Services.ModelServices;
 using Domain.Models;
 
-namespace Application.RequestHandlers.CommandHandlers.Products;
-
+/// <summary>
+/// This class is used to handle the update product command.
+/// </summary>
 public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, RequestHandlerResult<UpdateProductResponse>>
 {
     /// <summary>

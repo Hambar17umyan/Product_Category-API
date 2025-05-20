@@ -4,6 +4,9 @@ using Application.Models.Response.Commands.Categories;
 
 namespace Application.Models.Requests.Commands.Categories;
 
+/// <summary>
+/// This class represents a command to delete a category.
+/// </summary>
 public class DeleteCategoryCommand : IRequest<RequestHandlerResult<DeleteCategoryResponse>>
 {
     /// <summary>

@@ -1,9 +1,13 @@
-﻿using Application.Common.AppMediator;
+﻿namespace Application.Models.Requests.Queries.Products; 
+
+using Application.Common.AppMediator;
 using Application.Common.AppRequestHandlerResult;
 using Application.Models.Response.Queries.Products;
 
-namespace Application.Models.Requests.Queries.Products;
 
+/// <summary>
+/// This class represents a request to get a product by its ID.
+/// </summary>
 public class GetProductByIdQuery : IRequest<RequestHandlerResult<GetProductByIdResponse>>
 {
     /// <summary>

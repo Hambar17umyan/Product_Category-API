@@ -1,15 +1,13 @@
-﻿using Application.Common.AppMediator;
+﻿namespace Application.RequestHandlers.CommandHandlers.Products;
+
+using Application.Common.AppMediator;
 using Application.Common.AppRequestHandlerResult;
-using Application.Models.Requests.Commands.Categories;
 using Application.Models.Requests.Commands.Products;
-using Application.Models.Response.Commands.Categories;
 using Application.Models.Response.Commands.Products;
 using Application.Services.ModelServices;
 using Domain.Models;
 using Domain.Results;
-using System.ComponentModel.DataAnnotations;
 
-namespace Application.RequestHandlers.CommandHandlers.Products;
 
 /// <summary>
 /// This class handles the creation of a product.

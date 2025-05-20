@@ -1,18 +1,36 @@
-﻿using Infrastructure.Data.Entities;
+﻿namespace Infrastructure.Data.DB; 
+
+using Infrastructure.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Data.DB;
-
+/// <summary>
+/// This class is used to configure the database context for the application.
+/// </summary>
 public class AppDbContext : DbContext
 {
+    /// <summary>
+    /// This property is used to get the products from the database.
+    /// </summary>
     public DbSet<ProductEntity> Products => Set<ProductEntity>();
+
+    /// <summary>
+    /// This property is used to get the categories from the database.
+    /// </summary>
     public DbSet<CategoryEntity> Categories => Set<CategoryEntity>();
 
+    /// <summary>
+    /// Gets or sets the database connection string.
+    /// </summary>
+    /// <param name="options"></param>
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
         
     }
 
+    /// <summary>
+    /// This method is used to configure the model for the database context.
+    /// </summary>
+    /// <param name="modelBuilder"></param>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

@@ -4,6 +4,9 @@ using Application.Models.Response.Commands.Categories;
 
 namespace Application.Models.Requests.Commands.Categories;
 
+/// <summary>
+/// This class represents a command to create a new category.
+/// </summary>
 public class CreateCategoryCommand : IRequest<RequestHandlerResult<CreateCategoryResponse>>
 {
     /// <summary>

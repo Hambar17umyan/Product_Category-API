@@ -1,6 +1,7 @@
 namespace API;
 
 using API.Extensions;
+using API.Middlewares;
 
 /// <summary>
 /// The startin point class.
@@ -26,6 +27,7 @@ public class Program
         app.UseHttpsRedirection();
         app.UseAuthorization();
         app.MapControllers();
+        app.UseMiddleware<ExceptionHandlingMiddleware>();
         app.Run();
     }
 }

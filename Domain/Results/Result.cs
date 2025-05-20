@@ -1,5 +1,8 @@
 ﻿namespace Domain.Results;
 
+/// <summary>
+/// This class represents the result of an operation.
+/// </summary>
 public class Result
 {
     /// <summary>

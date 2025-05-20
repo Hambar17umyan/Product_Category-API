@@ -1,7 +1,11 @@
-﻿using Domain.Results;
+﻿namespace Application.Services.ModelServices; 
 
-namespace Application.Services.ModelServices;
+using Domain.Results;
 
+/// <summary>
+/// This interface defines the contract for a model service.
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public interface IModelService<T>
 {
     /// <summary>

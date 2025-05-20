@@ -28,5 +28,5 @@ public class ProductDTO
     /// <summary>
     /// Gets or sets the description of the product.
     /// </summary>
-    public int? Category3Id { get; set; }
+    public int? ProductCategory3Id { get; set; }
 }

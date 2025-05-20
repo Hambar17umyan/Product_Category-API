@@ -1,9 +1,12 @@
-﻿using Application.Common.AppMediator;
+﻿namespace Application.Models.Requests.Commands.Products; 
+
+using Application.Common.AppMediator;
 using Application.Common.AppRequestHandlerResult;
 using Application.Models.Response.Commands.Products;
 
-namespace Application.Models.Requests.Commands.Products;
-
+/// <summary>
+/// This class represents a command to update a product.
+/// </summary>
 public class UpdateProductCommand : IRequest<RequestHandlerResult<UpdateProductResponse>>
 {
     /// <summary>
@@ -14,7 +17,7 @@ public class UpdateProductCommand : IRequest<RequestHandlerResult<UpdateProductR
     /// <summary>
     /// Gets or sets the name of the updated product.
     /// </summary>
-    public string ProductName { get; set; }
+    public string ProductName { get; set; } = string.Empty;
 
     /// <summary>
     /// Gets or sets the ID of the first product category.

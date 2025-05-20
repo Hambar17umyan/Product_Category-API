@@ -1,8 +1,10 @@
-﻿
+﻿namespace Domain.Models;
+
 using Domain.Results;
 
-namespace Domain.Models;
-
+/// <summary>
+/// This class represents a product.
+/// </summary>
 public class Product
 {
     /// <summary>

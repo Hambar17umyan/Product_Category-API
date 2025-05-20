@@ -1,12 +1,12 @@
-﻿using Application.Models.Requests.Queries.Categories;
+﻿namespace Application.RequestHandlers.QueryHandlers.Categories; 
+
+using Application.Models.Requests.Queries.Categories;
 using Application.Common.AppMediator;
 using Application.Common.AppRequestHandlerResult;
 using Application.Models.Response.Queries.Categories;
 using Application.Services.ModelServices;
 using Domain.Results;
 using Application.Common.DTOs;
-
-namespace Application.RequestHandlers.QueryHandlers.Categories;
 
 /// <summary>
 /// This class handles the request to get categories with pagination.

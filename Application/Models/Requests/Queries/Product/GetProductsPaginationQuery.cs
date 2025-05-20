@@ -1,9 +1,13 @@
-﻿using Application.Common.AppMediator;
+﻿namespace Application.Models.Requests.Queries.Products; 
+
+using Application.Common.AppMediator;
 using Application.Common.AppRequestHandlerResult;
 using Application.Models.Response.Queries.Products;
 
-namespace Application.Models.Requests.Queries.Products;
 
+/// <summary>
+/// This class represents a request to get products with pagination.
+/// </summary>
 public class GetProductsPaginationQuery : IRequest<RequestHandlerResult<GetProductsPaginationResponse>>
 {
     /// <summary>

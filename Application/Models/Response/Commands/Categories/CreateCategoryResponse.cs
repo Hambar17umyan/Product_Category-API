@@ -3,6 +3,9 @@ using Application.Models.Response.Abstract;
 
 namespace Application.Models.Response.Commands.Categories;
 
+/// <summary>
+/// This class represents the response for creating a category.
+/// </summary>
 public class CreateCategoryResponse : IResponse<CreateCategoryCommand>
 {
     /// <summary>

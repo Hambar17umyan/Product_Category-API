@@ -3,6 +3,10 @@
 using Application.Common.AppMediator;
 using Application.Common.AppRequestHandlerResult;
 using Application.Models.Response.Queries.Categories;
+
+/// <summary>
+/// This class represents a request to get categories with pagination.
+/// </summary>
 public class GetCategoriesPaginationQuery : IRequest<RequestHandlerResult<GetCategoriesPaginationResponse>>
 {
     /// <summary>

@@ -3,6 +3,10 @@ using Infrastructure.Data.Entities;
 
 namespace Infrastructure.Data.Repositories.Abstract;
 
+/// <summary>
+/// This interface defines the contract for a generic repository.
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public interface IRepository<T> where T : class, IEntity
 {
     /// <summary>

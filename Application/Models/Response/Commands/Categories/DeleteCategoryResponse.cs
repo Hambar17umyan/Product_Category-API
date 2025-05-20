@@ -3,6 +3,9 @@ using Application.Models.Response.Abstract;
 
 namespace Application.Models.Response.Commands.Categories;
 
+/// <summary>
+/// This class represents the response for deleting a category.
+/// </summary>
 public class DeleteCategoryResponse : IResponse<DeleteCategoryCommand>
 {
     /// <summary>

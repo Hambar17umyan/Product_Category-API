@@ -2,6 +2,9 @@
 
 namespace Domain.Results;
 
+/// <summary>
+/// This enum represents a status code.
+/// </summary>
 public enum StatusCode
 {
     [Description("Status unspecified.")]
@@ -12,5 +15,6 @@ public enum StatusCode
     ArgumentNullError = 10400,
     [Description("The request was invalid.")]
     ArgumentInvalidError = 10401,
-    NotFound = 10501,
+    [Description("The request was not found.")]
+    NotFound = 10404,
 }

@@ -32,15 +32,23 @@ public class Mediator : IMediator
     public async Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken = default)
     {
         using var scope = this._scopeFactory.CreateScope();
+        var provider = scope.ServiceProvider;
 
         var handlerType = typeof(IRequestHandler<,>).MakeGenericType(request.GetType(), typeof(TResponse));
-        var handler = scope.ServiceProvider.GetService(handlerType);
+        var handler = provider.GetService(handlerType);
 
         if (handler == null)
             throw new InvalidOperationException($"Handler not registered for {request.GetType().Name}");
 
-        var method = handlerType.GetMethod("HandleAsync");
-        var resultTask = (Task<TResponse>)method!.Invoke(handler, new object[] { request, cancellationToken })!;
-        return await resultTask;
+        var handleMethod = handlerType.GetMethod("HandleAsync");
+
+        var validationMiddleware = new ValidationMiddleware(provider);
+
+        return await validationMiddleware.HandleAsync((IRequest<TResponse>)request, async validatedRequest =>
+        {
+            var resultTask = (Task<TResponse>)handleMethod!.Invoke(handler, new object[] { validatedRequest, cancellationToken })!;
+            return await resultTask;
+        });
     }
+
 }

@@ -1,15 +1,18 @@
-﻿using Application.Common.AppMediator;
+﻿namespace Application.Models.Requests.Commands.Products; 
+
+using Application.Common.AppMediator;
 using Application.Common.AppRequestHandlerResult;
 using Application.Models.Response.Commands.Products;
 
-namespace Application.Models.Requests.Commands.Products;
-
+/// <summary>
+/// This class represents a command to create a new product.
+/// </summary>
 public class CreateProductCommand : IRequest<RequestHandlerResult<CreateProductResponse>>
 {
     /// <summary>
     /// Gets or sets the name of the new product.
     /// </summary>
-    public string ProductName { get; set; }
+    public string ProductName { get; set; } = string.Empty;
 
     /// <summary>
     /// Gets or sets the description of the new product.

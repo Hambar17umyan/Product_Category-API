@@ -2,6 +2,10 @@
 
 namespace Domain.Results;
 
+/// <summary>
+/// This class represents a result.
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public class Result<T> : Result
 {
     /// <summary>
